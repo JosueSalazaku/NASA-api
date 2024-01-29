@@ -15,6 +15,15 @@ body {
   font-weight: 400;
 }
 
+.hamburger-btn {
+  font-size: 1.5em;
+  cursor: pointer;
+  border: none;
+  background: none;
+  z-index: 2;
+  display: none; /* Initially hide the hamburger button */
+}
+
 .nav {
   display: flex;
   justify-content: space-around;
@@ -57,22 +66,14 @@ h1 {
   line-height: 1.1;
 }
 
-.hamburger-btn {
-  font-size: 1.5em;
-  cursor: pointer;
-  border: none;
-  background: none;
-  z-index: 2;
+.nav ul {
+  display: flex;
+  flex-direction: row; /* Make sure it's horizontal for larger screens */
+  list-style: none;
 }
 
-.nav ul {
-  display: none;
-  position: absolute;
-  top: 70px;
-  left: 0;
-  width: 100vw;
-  background-color: white;
-  z-index: 1;
+.nav ul li {
+  padding: 10px;
 }
 
 .nav ul.show {
@@ -89,6 +90,28 @@ h1 {
   z-index: 1;
 }
 
-.nav ul li {
-  padding: 10px;
+@media only screen and (max-width: 600px) {
+  .hamburger-btn {
+    display: block; /* Show the hamburger button in mobile format */
+  }
+
+  .nav ul {
+    display: none; /* Hide the normal header for smaller screens */
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    min-width: 100vw;
+    height: 100vh;
+  }
+
+  h1 {
+    justify-content: center;
+    align-items: center;
+    font-size: 3.2em;
+    line-height: 1.1;
+  }
 }
