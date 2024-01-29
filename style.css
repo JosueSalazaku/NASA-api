@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
 }
+
 body {
   margin: 0;
   display: flex;
@@ -20,8 +21,9 @@ body {
   align-items: center;
   margin: 30px;
   height: 30px;
-  font-weight: 500;
+  font-weight: 650;
   font-size: 20px;
+  position: relative;
 }
 
 ul {
@@ -31,12 +33,12 @@ ul {
   align-items: center;
   list-style: none;
   width: 100vw;
-  color: black;
 }
 
 a {
   font-style: none;
   text-decoration: none;
+  color: black;
 }
 
 .container {
@@ -53,4 +55,40 @@ h1 {
   align-items: center;
   font-size: 3.2em;
   line-height: 1.1;
+}
+
+.hamburger-btn {
+  font-size: 1.5em;
+  cursor: pointer;
+  border: none;
+  background: none;
+  z-index: 2;
+}
+
+.nav ul {
+  display: none;
+  position: absolute;
+  top: 70px;
+  left: 0;
+  width: 100vw;
+  background-color: white;
+  z-index: 1;
+}
+
+.nav ul.show {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(142, 223, 252);
+  position: absolute;
+  top: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  padding: 0px 55px 0px 55px;
+  max-width: 300px;
+  z-index: 1;
+}
+
+.nav ul li {
+  padding: 10px;
 }
