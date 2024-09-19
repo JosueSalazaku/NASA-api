@@ -44,11 +44,27 @@ async function displayImageOfTheDay(data: NasaApodData) {
 
 }
 
+async function displayImageInfo(data: NasaApodData) {
+  if (!data) {
+    console.error('No data to display');
+    return;
+  }
+  const imageTitle = document.createElement("h1")
+  imageTitle.textContent = data.title;
+  imageTitle.classList.add('font-bold')
+  displaySection?.appendChild(imageTitle)
+
+  const desciption = document.createElement("p");
+  desciption.textContent = data.explanation
+  displaySection?.appendChild(desciption)
+}
+
 
 async function init() {
   const data = await fetchImageOfTheDay(); 
   if (data) {
     displayImageOfTheDay(data); 
+    displayImageInfo(data)
   }
 }
 
